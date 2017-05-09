@@ -19,7 +19,7 @@
       <c:forEach items="${sessionScope.lista}" var="ciudad"> 
         <li>
           ${ciudad}
-          <a href="#">Eliminar</a>
+          <a href="Eliminar?nombre=${ciudad}">Eliminar</a>
         </li>
       </c:forEach>
     </ol>

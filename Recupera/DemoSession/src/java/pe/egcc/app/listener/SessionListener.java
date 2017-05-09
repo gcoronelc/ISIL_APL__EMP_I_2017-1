@@ -9,13 +9,13 @@ public class SessionListener implements HttpSessionListener {
 
   @Override
   public void sessionCreated(HttpSessionEvent se) {
-    System.err.println("Sesion iniciada.");
+    System.err.println("EGCC: Sesion iniciada.");
     List<String> lista = new ArrayList<>();
     se.getSession().setAttribute("lista", lista);
   }
 
   @Override
   public void sessionDestroyed(HttpSessionEvent se) {
-
+    System.err.println("EGCC: Sesion finalizada.");
   }
 }

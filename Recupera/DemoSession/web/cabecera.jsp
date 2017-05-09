@@ -13,5 +13,5 @@
 <div>
   <a class="boton" href="agregar.jsp">Agregar Ciudad</a>
   <a class="boton" href="listado.jsp">Listado de Ciudades</a>
-  <a class="boton" href="#">Limpiar Lista</a>
+  <a class="boton" href="Limpiar">Limpiar Lista</a>
 </div>
