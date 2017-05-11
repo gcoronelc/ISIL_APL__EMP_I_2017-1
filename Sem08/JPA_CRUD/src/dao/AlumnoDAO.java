@@ -18,7 +18,7 @@ public class AlumnoDAO {
   private EntityManagerFactory emf;
 
   public AlumnoDAO() {
-    this.emf = Persistence.createEntityManagerFactory("JPADemo");
+    this.emf = Persistence.createEntityManagerFactory("JPAPanchito");
   }
 
   // Crea un nuevo alumno en la tabla alumno.

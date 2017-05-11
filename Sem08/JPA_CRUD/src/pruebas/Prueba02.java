@@ -14,7 +14,7 @@ public class Prueba02 {
 
     try {
       AlumnoDAO dao = new AlumnoDAO();
-      Alumno alumno = dao.read(1);
+      Alumno alumno = dao.read(2);
       System.out.println("ID: " + alumno.getId());
       System.out.println("Apellido: " + alumno.getApellido());
       System.out.println("Nombre: " + alumno.getNombre());

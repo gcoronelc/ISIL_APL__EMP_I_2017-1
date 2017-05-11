@@ -13,9 +13,9 @@ public class Prueba01 {
   public static void main(String[] args) {
     
     Alumno alumno = new Alumno();
-    alumno.setApellido("Ramirez");
-    alumno.setNombre("reynaldo");
-    alumno.setNota(15);
+    alumno.setApellido("CORONEL");
+    alumno.setNombre("GUSTAVO");
+    alumno.setNota(20);
 
     try {
       AlumnoDAO dao = new AlumnoDAO();

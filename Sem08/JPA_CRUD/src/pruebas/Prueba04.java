@@ -16,8 +16,9 @@ public class Prueba04 {
     
 		Alumno alumno = new Alumno();
 		alumno.setApellido("Coronel");
-    alumno.setNombre("Gustavo");
-    alumno.setNota(18);
+    alumno.setNombre("ERIC");
+    alumno.setNota(20);
+    alumno.setId(3);
 
 		try {
 			AlumnoDAO dao = new AlumnoDAO();

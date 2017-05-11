@@ -28,10 +28,13 @@ public class Alumno implements Serializable {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "alu_id")
   private Integer id;
+  
   @Column(name = "alu_nombre", length = 50, nullable = false)
   private String nombre;
+  
   @Column(name = "alu_apellido", length = 50, nullable = false)
   private String apellido;
+  
   @Column(name = "alu_nota")
   private Integer nota;
 
@@ -78,7 +81,9 @@ public class Alumno implements Serializable {
 
   public Object[] toRowData() {
     Object[] row;
-    row = new Object[]{this.getId(), this.getApellido(), this.getNombre(), this.getNota()};
+    // row = new Object[]{this.getId(), this.getApellido(), this.getNombre(), this.getNota()};
+    row = new Object[]{id, apellido, nombre, nota};
     return row;
   }
+  
 }
