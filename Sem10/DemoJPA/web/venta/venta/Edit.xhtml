@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+  <ui:composition template="/template.xhtml">
+    <ui:define name="title">
+      <h:outputText value="#{bundle.EditVentaTitle}"></h:outputText>
+    </ui:define>
+    <ui:define name="body">
+      <h:panelGroup id="messagePanel" layout="block">
+        <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+      </h:panelGroup>
+      <h:form>
+        <h:panelGrid columns="2">
+          <h:outputLabel value="#{bundle.EditVentaLabel_venId}" for="venId" />
+          <h:inputText id="venId" value="#{ventaController.selected.venId}" title="#{bundle.EditVentaTitle_venId}" required="true" requiredMessage="#{bundle.EditVentaRequiredMessage_venId}"/>
+          <h:outputLabel value="#{bundle.EditVentaLabel_venFecha}" for="venFecha" />
+          <h:inputText id="venFecha" value="#{ventaController.selected.venFecha}" title="#{bundle.EditVentaTitle_venFecha}" required="true" requiredMessage="#{bundle.EditVentaRequiredMessage_venFecha}">
+            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+          </h:inputText>
+          <h:outputLabel value="#{bundle.EditVentaLabel_venSubtotal}" for="venSubtotal" />
+          <h:inputText id="venSubtotal" value="#{ventaController.selected.venSubtotal}" title="#{bundle.EditVentaTitle_venSubtotal}" required="true" requiredMessage="#{bundle.EditVentaRequiredMessage_venSubtotal}"/>
+          <h:outputLabel value="#{bundle.EditVentaLabel_venImpuesto}" for="venImpuesto" />
+          <h:inputText id="venImpuesto" value="#{ventaController.selected.venImpuesto}" title="#{bundle.EditVentaTitle_venImpuesto}" required="true" requiredMessage="#{bundle.EditVentaRequiredMessage_venImpuesto}"/>
+          <h:outputLabel value="#{bundle.EditVentaLabel_venTotal}" for="venTotal" />
+          <h:inputText id="venTotal" value="#{ventaController.selected.venTotal}" title="#{bundle.EditVentaTitle_venTotal}" required="true" requiredMessage="#{bundle.EditVentaRequiredMessage_venTotal}"/>
+          <h:outputLabel value="#{bundle.EditVentaLabel_cliId}" for="cliId" />
+          <h:selectOneMenu id="cliId" value="#{ventaController.selected.cliId}" title="#{bundle.EditVentaTitle_cliId}" required="true" requiredMessage="#{bundle.EditVentaRequiredMessage_cliId}">
+            <f:selectItems value="#{clienteController.itemsAvailableSelectOne}"/>
+          </h:selectOneMenu>
+        </h:panelGrid>
+        <h:commandLink action="#{ventaController.update}" value="#{bundle.EditVentaSaveLink}"/>
+        <br />
+        <br />
+        <h:link outcome="View" value="#{bundle.EditVentaViewLink}"/>
+        <br />
+        <h:commandLink action="#{ventaController.prepareList}" value="#{bundle.EditVentaShowAllLink}" immediate="true"/>
+        <br />
+        <br />
+        <h:link outcome="/index" value="#{bundle.EditVentaIndexLink}" />
+      </h:form>
+    </ui:define>
+  </ui:composition>
+
+</html>

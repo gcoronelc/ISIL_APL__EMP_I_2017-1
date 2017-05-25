@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+	<h:head>
+		<title>Facelet Title</title>
+		<style type="text/css">
+			#PAGINA{
+				margin: 0 auto 0 auto;
+				width: 600px;
+				background-color: gainsboro;
+			}
+		</style>
+	</h:head>
+	<h:body>
+		<div id="PAGINA">
+			<h:form>
+				<h1>SISTEMAS DE VENTAS</h1>
+				<table cellspacing="20">
+					<tr>
+						<td><h:commandLink value="Ventas" action="ventas"/></td>
+						<td><h:commandLink value="Consultas por cliente" action="consultasCliente"/></td>
+						<td><h:commandLink value="Consultas por fecha" action="consultasFecha"/></td>
+					</tr>
+				</table>
+			</h:form>
+		</div>
+	</h:body>
+</html>
+

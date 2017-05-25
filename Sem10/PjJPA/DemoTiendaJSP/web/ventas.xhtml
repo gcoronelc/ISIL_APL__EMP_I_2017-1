@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <style type="text/css">
+            #PAGE{
+                margin-left: auto;
+                margin-right: auto;
+                width: 600px;
+            }
+            H1{
+                font-size: 24px;
+                color: crimson;
+            }
+            .BLOCK{
+                background-color: gainsboro;
+                border-color: black;
+                border-width: medium;
+                border-style: solid;
+                margin: 5px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div id="PAGE">
+            <h:form>
+                <h1>V E N T A S</h1>
+                <div class="BLOCK">
+                    <table>
+                        <tr>
+                            <td>Cliente</td>
+                            <td width="220">
+                                <h:selectOneMenu value="#{ventaController.cliId}">
+                                    <f:selectItems value="#{ventaController.listaClientes}"/>
+                                </h:selectOneMenu>
+                            </td>
+                            <td>Articulos</td>
+                            <td>#{ventaController.cantArticulos}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Importe</td>
+                            <td>#{ventaController.importeTotal}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="BLOCK">
+                    <table>
+                        <tr>
+                            <td>Articulo</td>
+                            <td width="150">
+                                <h:selectOneMenu value="#{ventaController.artId}">
+                                    <f:selectItems value="#{ventaController.listaArticulos}"/>
+                                </h:selectOneMenu>
+                            </td>
+                            <td>Cantidad</td>
+                            <td><h:inputText value="#{ventaController.cantidad}" size="4" maxlength="4"/></td>
+                            <td><h:commandButton value="Agregar" action="#{ventaController.agregarItem}"/></td>
+                        </tr>
+                    </table>
+                </div>
+                <c:if test="${not empty ventaController.listaItems}">
+                    <div class="BLOCK">
+                        <h:dataTable value="#{ventaController.listaItems}" var="item" border="1">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Articulo"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nombre}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Precio"/>
+                                </f:facet>
+                                <h:outputText value="#{item.precio}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Cantidad"/>
+                                </f:facet>
+                                <h:outputText value="#{item.cantidad}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Importe"/>
+                                </f:facet>
+                                <h:outputText value="#{item.importe}"/>
+                            </h:column>
+                        </h:dataTable>
+                    </div>
+                </c:if>
+                <p>
+						 <h:commandButton value="Procesar Venta" action="#{ventaController.procesarVenta}" />
+						 <h:commandButton value="Retornar" action="index" />
+					 </p>
+                <p><h:outputText value="#{ventaController.mensaje}"/></p>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

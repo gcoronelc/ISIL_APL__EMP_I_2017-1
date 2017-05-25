@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+  <ui:composition template="/template.xhtml">
+    <ui:define name="title">
+      <h:outputText value="#{bundle.CreateArticuloTitle}"></h:outputText>
+    </ui:define>
+    <ui:define name="body">
+      <h:panelGroup id="messagePanel" layout="block">
+        <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+      </h:panelGroup>
+      <h:form>
+        <h:panelGrid columns="2">
+          <h:outputLabel value="#{bundle.CreateArticuloLabel_artId}" for="artId" />
+          <h:inputText id="artId" value="#{articuloController.selected.artId}" title="#{bundle.CreateArticuloTitle_artId}" required="true" requiredMessage="#{bundle.CreateArticuloRequiredMessage_artId}"/>
+          <h:outputLabel value="#{bundle.CreateArticuloLabel_artCodigo}" for="artCodigo" />
+          <h:inputText id="artCodigo" value="#{articuloController.selected.artCodigo}" title="#{bundle.CreateArticuloTitle_artCodigo}" required="true" requiredMessage="#{bundle.CreateArticuloRequiredMessage_artCodigo}"/>
+          <h:outputLabel value="#{bundle.CreateArticuloLabel_artNombre}" for="artNombre" />
+          <h:inputText id="artNombre" value="#{articuloController.selected.artNombre}" title="#{bundle.CreateArticuloTitle_artNombre}" required="true" requiredMessage="#{bundle.CreateArticuloRequiredMessage_artNombre}"/>
+          <h:outputLabel value="#{bundle.CreateArticuloLabel_artPrecio}" for="artPrecio" />
+          <h:inputText id="artPrecio" value="#{articuloController.selected.artPrecio}" title="#{bundle.CreateArticuloTitle_artPrecio}" required="true" requiredMessage="#{bundle.CreateArticuloRequiredMessage_artPrecio}"/>
+          <h:outputLabel value="#{bundle.CreateArticuloLabel_artStock}" for="artStock" />
+          <h:inputText id="artStock" value="#{articuloController.selected.artStock}" title="#{bundle.CreateArticuloTitle_artStock}" required="true" requiredMessage="#{bundle.CreateArticuloRequiredMessage_artStock}"/>
+        </h:panelGrid>
+        <br />
+        <h:commandLink action="#{articuloController.create}" value="#{bundle.CreateArticuloSaveLink}" />
+        <br />
+        <br />
+        <h:commandLink action="#{articuloController.prepareList}" value="#{bundle.CreateArticuloShowAllLink}" immediate="true"/>
+        <br />
+        <br />
+        <h:link outcome="/index" value="#{bundle.CreateArticuloIndexLink}"/>
+      </h:form>
+    </ui:define>
+  </ui:composition>
+
+</html>

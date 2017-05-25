@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+  <ui:composition template="/template.xhtml">
+    <ui:define name="title">
+      <h:outputText value="#{bundle.EditDetalleTitle}"></h:outputText>
+    </ui:define>
+    <ui:define name="body">
+      <h:panelGroup id="messagePanel" layout="block">
+        <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+      </h:panelGroup>
+      <h:form>
+        <h:panelGrid columns="2">
+          <h:outputLabel value="#{bundle.EditDetalleLabel_detId}" for="detId" />
+          <h:inputText id="detId" value="#{detalleController.selected.detId}" title="#{bundle.EditDetalleTitle_detId}" required="true" requiredMessage="#{bundle.EditDetalleRequiredMessage_detId}"/>
+          <h:outputLabel value="#{bundle.EditDetalleLabel_detPrecio}" for="detPrecio" />
+          <h:inputText id="detPrecio" value="#{detalleController.selected.detPrecio}" title="#{bundle.EditDetalleTitle_detPrecio}" required="true" requiredMessage="#{bundle.EditDetalleRequiredMessage_detPrecio}"/>
+          <h:outputLabel value="#{bundle.EditDetalleLabel_detCantidad}" for="detCantidad" />
+          <h:inputText id="detCantidad" value="#{detalleController.selected.detCantidad}" title="#{bundle.EditDetalleTitle_detCantidad}" required="true" requiredMessage="#{bundle.EditDetalleRequiredMessage_detCantidad}"/>
+          <h:outputLabel value="#{bundle.EditDetalleLabel_detSubtotal}" for="detSubtotal" />
+          <h:inputText id="detSubtotal" value="#{detalleController.selected.detSubtotal}" title="#{bundle.EditDetalleTitle_detSubtotal}" required="true" requiredMessage="#{bundle.EditDetalleRequiredMessage_detSubtotal}"/>
+          <h:outputLabel value="#{bundle.EditDetalleLabel_artId}" for="artId" />
+          <h:selectOneMenu id="artId" value="#{detalleController.selected.artId}" title="#{bundle.EditDetalleTitle_artId}" required="true" requiredMessage="#{bundle.EditDetalleRequiredMessage_artId}">
+            <f:selectItems value="#{articuloController.itemsAvailableSelectOne}"/>
+          </h:selectOneMenu>
+          <h:outputLabel value="#{bundle.EditDetalleLabel_venId}" for="venId" />
+          <h:selectOneMenu id="venId" value="#{detalleController.selected.venId}" title="#{bundle.EditDetalleTitle_venId}" required="true" requiredMessage="#{bundle.EditDetalleRequiredMessage_venId}">
+            <f:selectItems value="#{ventaController.itemsAvailableSelectOne}"/>
+          </h:selectOneMenu>
+        </h:panelGrid>
+        <h:commandLink action="#{detalleController.update}" value="#{bundle.EditDetalleSaveLink}"/>
+        <br />
+        <br />
+        <h:link outcome="View" value="#{bundle.EditDetalleViewLink}"/>
+        <br />
+        <h:commandLink action="#{detalleController.prepareList}" value="#{bundle.EditDetalleShowAllLink}" immediate="true"/>
+        <br />
+        <br />
+        <h:link outcome="/index" value="#{bundle.EditDetalleIndexLink}" />
+      </h:form>
+    </ui:define>
+  </ui:composition>
+
+</html>
