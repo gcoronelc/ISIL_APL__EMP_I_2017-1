@@ -1,0 +1,225 @@
+body, html {
+    height: 100%;
+    font-family: Calibri;
+    margin: 0;
+    padding: 0;
+}
+
+/*ESTILO LOGIN*/
+.body_login {
+    background-image: url(../img/fondo_libros.jpg) ;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.div_login {
+    background: rgba(17, 49, 61, 0.5);
+    height: 100%;
+    color: #FFFFFF;
+    text-align: center;
+    width: fit-content;
+    margin-left: 150px;
+    padding: 20px 100px 0;
+}
+
+.titulo_login {
+    margin-top: 130px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.btn_login {
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  border: 3px solid #11313D;
+  color: #11313D;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 15px 25px;
+  cursor: pointer;
+  transition-duration: 0.8s;
+}
+
+.btn_login:hover {
+    color: #FFFFFF;
+    background: #11313D;
+}
+
+.txt_login_user {
+    background-image: url(../img/user.png);
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    width: 100%;
+    padding: 10px 40px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #27718B;
+    transition: 0.5s;
+    outline: none;
+}
+
+.txt_login_user:focus {
+    border: 3px solid #11313D;
+    outline: none;
+}
+
+.txt_login_pass {
+    background-image: url(../img/pass.png);
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    width: 100%;
+    padding: 10px 40px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #27718B;
+    transition: 0.5s;
+    outline: none;
+}
+
+.txt_login_pass:focus {
+    border: 3px solid #11313D;
+    outline: none;
+}
+
+.pie_login {
+    text-align: right;
+    color: #FFFFFF;
+    font-weight: bold;
+    background-color: #757575;
+    padding: 10px;
+}
+
+/*ESTILO PRINCIPAL*/
+.body_principal {
+    background-color: #D3D3D3;
+    margin: -16px 0 0 0;
+}
+
+.cabecera li {
+    display: inline-block;
+    float: right;
+    position: relative;
+    z-index: 100;
+}
+ 
+.cabecera li a {
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    color: #FFFFFF;
+    transition: all 0.2s;
+}
+ 
+.cabecera li a:hover, 
+.cabecera li:hover > a{
+    color:#FFFFFF;
+    background:#16495B;
+}
+
+.cabecera ul {
+    display: none;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    background: #FFFFFF;
+}
+ 
+.cabecera li:hover > ul{
+    display: block;
+}
+ 
+.cabecera ul li {
+    display: block;
+    float: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+ 
+.cabecera ul li a {
+    font-weight: normal;
+    display: block;
+    color: #797979;
+    border-left: 3px solid #FFFFFF;
+    background: #FFFFFF;
+}
+ 
+.cabecera ul li a:hover,
+.cabecera ul li:hover > a{
+    background:#F0F0F0;
+    border-left:5px solid #16495B;
+    color:#797979;
+}
+
+/*ESTILO MENÚ*/
+.menu {
+    display:block;
+    background-color: #11313D;
+}
+ 
+.menu li {
+    display: inline-block;
+    position: relative;
+    z-index: 100;
+}
+ 
+.menu li a {
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    color: #FFFFFF;
+    transition: all 0s ease-in-out 0s;
+}
+ 
+.menu li a:hover, 
+.menu li:hover > a{
+    color:#FFFFFF;
+    background:#16495B;
+}
+
+/* hide the second level menu */
+.menu ul {
+    display: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    background: #FFFFFF;
+}
+ 
+/* display second level menu on hover */
+.menu li:hover > ul{
+    display: block;
+}
+ 
+.menu ul li {
+    display: block;
+    float: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+ 
+.menu ul li a {
+    font-weight: normal;
+    display: block;
+    color: #797979;
+    border-left: 3px solid #FFFFFF;
+    background: #FFFFFF;
+}
+ 
+.menu ul li a:hover,
+.menu ul li:hover > a{
+    background:#F0F0F0;
+    border-left:5px solid #16495B;
+    color:#797979;
+}
