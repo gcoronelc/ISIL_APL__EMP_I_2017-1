@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+  <h:head>
+    <title>Facelet Title</title>
+  </h:head>
+  <h:body>
+    <h:form>
+
+      <h1>SUMA CON JSF</h1>
+
+      <fieldset>
+        <legend>Datos</legend>
+
+        <div>
+          <h:outputLabel>Número 01:</h:outputLabel>
+          <h:inputText value="#{appController.num1}" />
+        </div>
+
+        <div>
+          <h:outputLabel>Número 02:</h:outputLabel>
+          <h:inputText value="#{appController.num2}" />
+        </div>
+        
+        <div>
+          <h:commandButton value="Procesar"
+                           action="#{appController.doSumar()}"/>
+        </div>
+        
+
+      </fieldset>
+
+      
+      <fieldset>
+        <legend>RESULTADO</legend>
+        <h:outputLabel>Suma: #{appController.suma}</h:outputLabel>
+      </fieldset>
+
+    </h:form>
+  </h:body>
+</html>
+

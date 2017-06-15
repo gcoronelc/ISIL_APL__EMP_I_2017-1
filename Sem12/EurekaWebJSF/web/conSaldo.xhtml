@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+  <body>
+
+    <ui:composition template="./plantilla/PlantillaEureka.xhtml">
+
+      <ui:define name="content">
+        
+        
+        
+        <h:form>
+          
+          
+          <p:growl id="growl" showDetail="true" sticky="true" />  
+           
+          <h1>CONSULTA DE SALDO</h1>
+          
+          <p:panel header="Datos">
+          
+            <label>Cuenta:</label>
+            <p:inputText value="#{consultaSaldo.cuenta}" />
+            <p:commandButton value="Consultar"
+                             action="#{consultaSaldo.doProcesar()}"
+                             ajax="false"/>
+            
+          </p:panel>
+          
+          <p:panel header="Resultado">
+          
+            <div>Cuenta: #{consultaSaldo.cuenta}</div>
+            <div>Cuenta: #{consultaSaldo.saldo}</div>
+            
+          </p:panel>
+          
+          
+          
+        </h:form>
+      </ui:define>
+
+    </ui:composition>
+
+  </body>
+</html>
