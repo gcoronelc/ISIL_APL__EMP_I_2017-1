@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./plantilla/PlantillaColegio.xhtml">
+
+            <ui:define name="content">
+
+
+
+                <h:form>
+
+
+                    <p:growl id="growl" showDetail="true" sticky="true" />  
+
+                    <h1>LISTADO DE EMPLEADOS</h1>
+
+                    <p:panel header="Datos">
+
+                        <p:commandButton value="Consultar"
+                                         action="#{listaEmpleados.doProcesar()}"
+                                         ajax="false"/>
+
+                    </p:panel>
+
+                   
+                    <p:panel header="Resultado">
+
+                        <p:dataTable var="r" value="#{listaEmpleados.lista}">
+                            <p:column headerText="Codigo">
+                                <h:outputText value="#{r.IDEMP}" />
+                            </p:column>
+                            <p:column headerText="Usuario">
+                                <h:outputText value="#{r.USUARIO}" />
+                            </p:column>
+                            <p:column headerText="Clave">
+                                <h:outputText value="#{r.CLAVE}" />
+                            </p:column>
+                            <p:column headerText="Nombre">
+                                <h:outputText value="#{r.NOMBRE_EMP}" />
+                            </p:column>
+                            <p:column headerText="Apellido">
+                                <h:outputText value="#{r.APELLIDO_EMP}" />
+                            </p:column>
+                            <p:column headerText="Correo">
+                                <h:outputText value="#{r.CORREO}" />
+                            </p:column>
+
+                            <p:column headerText="ID Permiso">
+                                <h:outputText value="#{r.IDPER}" />
+                            </p:column>
+
+                        </p:dataTable>
+
+                    </p:panel>
+
+
+
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

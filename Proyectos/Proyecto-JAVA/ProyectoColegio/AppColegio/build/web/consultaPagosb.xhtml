@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./plantilla/PlantillaColegio_secret.xhtml">
+
+            <ui:define name="content">
+                
+                 <h:form>
+
+
+                    <p:growl id="growl" showDetail="true" sticky="true" />  
+
+                    <h1>CONSULTA DE PAGOS</h1>
+
+                    <p:panel header="Datos">
+
+                        <label>ID ALUMNO:</label>
+                        <p:inputText value="#{consultarPagos.idAlumno}" />
+                        <p:commandButton value="Consultar"
+                                         action="#{consultarPagos.doProcesar()}"
+                                         ajax="false"/>
+
+                    </p:panel>
+
+                   
+                    <p:panel header="Resultado">
+
+                        <p:dataTable var="r" value="#{consultarPagos.lista}">
+                            <p:column headerText="Nombre Estudiante">
+                                <h:outputText value="#{r.NOMBRE_EST}" />
+                            </p:column>
+                            <p:column headerText="Apellidos">
+                                <h:outputText value="#{r.APELLIDO_EST}" />
+                            </p:column>
+                            <p:column headerText="Correo Apoderado">
+                                <h:outputText value="#{r.CORREO_APO}" />
+                            </p:column>
+                            <p:column headerText="Monto">
+                                <h:outputText value="#{r.MONTO}" />
+                            </p:column>
+                             <p:column headerText="Fecha Pago">
+                                <h:outputText value="#{r.FEC_PAGO}" />
+                            </p:column>
+                            <p:column headerText="Fecha de Vencimiento">
+                                <h:outputText value="#{r.FEC_VENCIM}" />
+                            </p:column>
+     
+                        </p:dataTable>
+
+                    </p:panel>
+
+
+
+                </h:form>
+                
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
